@@ -72,5 +72,14 @@
         > 直接使用 this.$refs.name 即可访问 
         2. 重名情况下 
         > this.$refs.names[0] 可以访问
+    2. vue组件中元素不更新
+       1. 如何强制更新数据(update)
+          1. this.$forceUpdate();
+          > 该方法不管数据有没有进行更新都会进行强制进行更新 
+    3. vue插槽创建方法(slot)
+       1. 2.6.0版本
+          1. 创建
+            语法` v-slot:slotName = "customPropsName"`,解释,在使用组件的时候在template中定义此行代码即可
+              1. 
 ## 4. 先留着这个板块
 ## 6. 我悟了
