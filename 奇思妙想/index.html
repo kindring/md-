@@ -22,12 +22,91 @@
             margin: 0;
             border: 0
         }
+        
+        .div {
+            margin: 200px;
+            width: 200px;
+            padding: 100px;
+            border: 1px solid black;
+            position: relative;
+        }
+        
+        .div2 {
+            margin: 200px;
+            width: 200px;
+            padding: 100px;
+            border: 1px solid black;
+            float: left;
+        }
     </style>
 </head>
 
 <body>
     <img src="./1_answer_a.png" alt="" class="i">
-    <img src="./1_answer_b.png" alt="" class="i">
+    <div class="div2">
+        <div class="div">
+
+            <div class="div">
+
+                <img src="./1_answer_b.png" alt="" class="i" onclick="drag()">
+            </div>
+        </div>
+    </div>
+    <div class="div2">
+
+        <div class="div2">
+
+            <div class="div2">
+
+                <img src="./1_answer_b.png" alt="" class="i" onclick="drag()">
+            </div>
+        </div>
+    </div>
 </body>
+<script>
+    function drag(e) {
+        e = e || window.event;
+        console.log(e.target);
+        console.log(e.target.offsetLeft);
+        console.log(getOffsetLeft(e.target));
+    }
+
+    function getOffsetLeft(obj) {
+        let tmp = obj.offsetLeft;
+        let val = obj.offsetParent;
+        while (val != null) {
+            tmp += val.offsetLeft;
+            val = val.offsetParent;
+        }
+        return tmp;
+    };
+
+    let arr = [
+            [0, 1, 1],
+            [1, 1, 0],
+            [1, 0, 0]
+        ]
+        [
+            [1, null, null],
+            [0, 0, 1],
+            [1, null, null]
+        ]
+        [
+            [1, 0, 1],
+            [1, 0, 1],
+            [0, 1, 0]
+        ]
+
+    function isOk(arr) {
+        let total = 0
+        for (var i = 0; i < arr.length; i++) {
+            // if(){
+
+            // }
+            total += i;
+        }
+        console.log(i)
+    }
+</script>
 
 </html>
